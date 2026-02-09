@@ -10,7 +10,84 @@
 
 *Real results from intelligent ERPNext implementation and custom automation workflows*
 
-[🌐 Live Demo](#) • [📱 WhatsApp](https://wa.me/201113903070) • [💼 Portfolio](https://moh222salah.github.io/cv)
+
+---
+
+## 🛠️ Technology Stack
+
+<div align="center">
+
+| Core Platform | Development | Automation | Infrastructure |
+|:---:|:---:|:---:|:---:|
+| ![ERPNext](https://img.shields.io/badge/ERPNext-0089FF?style=flat-square&logo=python&logoColor=white) | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) | ![n8n](https://img.shields.io/badge/n8n-EA4B71?style=flat-square&logo=n8n&logoColor=white) | ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white) |
+| ![Frappe](https://img.shields.io/badge/Frappe-0089FF?style=flat-square) | ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) | ![REST API](https://img.shields.io/badge/REST-02569B?style=flat-square&logo=rest&logoColor=white) | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white) |
+| ![Flask](https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white) | ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) | ![Webhooks](https://img.shields.io/badge/Webhooks-FF6C37?style=flat-square) | ![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=flat-square&logo=mariadb&logoColor=white) |
+
+</div>
+
+---
+
+## 📊 Real Results
+
+<div align="center">
+
+### **Measurable Impact on Business Operations**
+
+</div>
+
+```mermaid
+graph LR
+    A[Manual Process<br/>5 Days] -->|Custom Automation| B[Automated Process<br/>8 Hours]
+    C[15% Error Rate] -->|Smart Validation| D[<2% Error Rate]
+    E[Limited Scale] -->|Intelligent System| F[10x Scalability]
+    
+    style A fill:#ef4444,stroke:#dc2626,color:#fff
+    style C fill:#ef4444,stroke:#dc2626,color:#fff
+    style E fill:#ef4444,stroke:#dc2626,color:#fff
+    style B fill:#4ade80,stroke:#22c55e,color:#000
+    style D fill:#4ade80,stroke:#22c55e,color:#000
+    style F fill:#4ade80,stroke:#22c55e,color:#000
+```
+
+<table>
+<tr>
+<th>Metric</th>
+<th>Before</th>
+<th>After</th>
+<th>Improvement</th>
+</tr>
+<tr>
+<td><strong>Month-End Closing</strong></td>
+<td>5 Days (120 hours)</td>
+<td>8 Hours</td>
+<td><span style="color: #4ade80;">⬇️ 84% faster</span></td>
+</tr>
+<tr>
+<td><strong>Error Rate</strong></td>
+<td>15%</td>
+<td>&lt;2%</td>
+<td><span style="color: #4ade80;">⬇️ 87% reduction</span></td>
+</tr>
+<tr>
+<td><strong>Processing Time</strong></td>
+<td>Hours</td>
+<td>Seconds</td>
+<td><span style="color: #4ade80;">⚡ Real-time</span></td>
+</tr>
+<tr>
+<td><strong>Scalability</strong></td>
+<td>1x</td>
+<td>10x</td>
+<td><span style="color: #4ade80;">⬆️ 10x growth ready</span></td>
+</tr>
+<tr>
+<td><strong>Operational Costs</strong></td>
+<td>Baseline</td>
+<td>-60-80%</td>
+<td><span style="color: #4ade80;">💰 Major savings</span></td>
+</tr>
+</table>
+
 
 ---
 
@@ -132,83 +209,6 @@ Bank-level security with role-based access and audit trails
 - Complete audit logs
 
 </td>
-</tr>
-</table>
-
----
-
-## 🛠️ Technology Stack
-
-<div align="center">
-
-| Core Platform | Development | Automation | Infrastructure |
-|:---:|:---:|:---:|:---:|
-| ![ERPNext](https://img.shields.io/badge/ERPNext-0089FF?style=flat-square&logo=python&logoColor=white) | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) | ![n8n](https://img.shields.io/badge/n8n-EA4B71?style=flat-square&logo=n8n&logoColor=white) | ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white) |
-| ![Frappe](https://img.shields.io/badge/Frappe-0089FF?style=flat-square) | ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) | ![REST API](https://img.shields.io/badge/REST-02569B?style=flat-square&logo=rest&logoColor=white) | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white) |
-| ![Flask](https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white) | ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) | ![Webhooks](https://img.shields.io/badge/Webhooks-FF6C37?style=flat-square) | ![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=flat-square&logo=mariadb&logoColor=white) |
-
-</div>
-
----
-
-## 📊 Real Results
-
-<div align="center">
-
-### **Measurable Impact on Business Operations**
-
-</div>
-
-```mermaid
-graph LR
-    A[Manual Process<br/>5 Days] -->|Custom Automation| B[Automated Process<br/>8 Hours]
-    C[15% Error Rate] -->|Smart Validation| D[<2% Error Rate]
-    E[Limited Scale] -->|Intelligent System| F[10x Scalability]
-    
-    style A fill:#ef4444,stroke:#dc2626,color:#fff
-    style C fill:#ef4444,stroke:#dc2626,color:#fff
-    style E fill:#ef4444,stroke:#dc2626,color:#fff
-    style B fill:#4ade80,stroke:#22c55e,color:#000
-    style D fill:#4ade80,stroke:#22c55e,color:#000
-    style F fill:#4ade80,stroke:#22c55e,color:#000
-```
-
-<table>
-<tr>
-<th>Metric</th>
-<th>Before</th>
-<th>After</th>
-<th>Improvement</th>
-</tr>
-<tr>
-<td><strong>Month-End Closing</strong></td>
-<td>5 Days (120 hours)</td>
-<td>8 Hours</td>
-<td><span style="color: #4ade80;">⬇️ 84% faster</span></td>
-</tr>
-<tr>
-<td><strong>Error Rate</strong></td>
-<td>15%</td>
-<td>&lt;2%</td>
-<td><span style="color: #4ade80;">⬇️ 87% reduction</span></td>
-</tr>
-<tr>
-<td><strong>Processing Time</strong></td>
-<td>Hours</td>
-<td>Seconds</td>
-<td><span style="color: #4ade80;">⚡ Real-time</span></td>
-</tr>
-<tr>
-<td><strong>Scalability</strong></td>
-<td>1x</td>
-<td>10x</td>
-<td><span style="color: #4ade80;">⬆️ 10x growth ready</span></td>
-</tr>
-<tr>
-<td><strong>Operational Costs</strong></td>
-<td>Baseline</td>
-<td>-60-80%</td>
-<td><span style="color: #4ade80;">💰 Major savings</span></td>
 </tr>
 </table>
 
