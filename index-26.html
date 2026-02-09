@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ERPNext Automation Expert - Transforming Business Operations">
+    <meta name="keywords" content="ERPNext, Automation, Full Stack Developer, Business Process Automation, ERP">
+    <meta name="author" content="ERPNext Automation Expert">
+    <title>ERPNext Automation Expert | From 5 Days to 8 Hours</title>
+    
+    <style>
+        /* ===== FONTS ===== */
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap');
+
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #667eea;
+            --primary-dark: #5568d3;
+            --secondary: #764ba2;
+            --accent: #f093fb;
+            --success: #4ade80;
+            --warning: #fbbf24;
+            --error: #ef4444;
+            
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            
+            --bg-dark: #0f0f23;
+            --bg-dark-secondary: #1a1a2e;
+            --text-light: #ffffff;
+            --text-muted: #a0aec0;
+            
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --spacing-xl: 6rem;
+            
+            --font-body: 'Cairo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-heading: 'Cairo', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        ::selection {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* ===== ANIMATED BACKGROUND ===== */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            opacity: 0.05;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(118, 75, 162, 0.3) 0%, transparent 50%);
+            animation: pulseGradient 15s ease-in-out infinite;
+        }
+
+        @keyframes pulseGradient {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.1); }
+        }
+
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(102, 126, 234, 0.5);
+            border-radius: 50%;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
+        }
+
+        /* ===== NAVIGATION ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 1rem 5%;
+            box-shadow: var(--glass-shadow);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .lang-toggle {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            color: var(--text-light);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .lang-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* ===== SECTIONS ===== */
+        section {
+            min-height: 100vh;
+            padding: var(--spacing-xl) 5%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            text-align: center;
+        }
+
+        .hero-content {
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 50px;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease 0.4s forwards;
+            opacity: 0;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease 0.6s forwards;
+            opacity: 0;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            animation: fadeInUp 1s ease 0.8s forwards;
+            opacity: 0;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 1s forwards;
+            opacity: 0;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+        }
+
+        .btn-secondary {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--glass-border);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        /* ===== STATS ===== */
+        .stats {
+            background: var(--bg-dark-secondary);
+            padding: var(--spacing-lg) 5%;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .stat-card.visible {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+        }
+
+        .stat-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .stat-value {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+
+        /* ===== SECTION HEADERS ===== */
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+        }
+
+        /* ===== TIMELINE ===== */
+        .timeline {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 5rem;
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+
+        .timeline-item.visible {
+            animation: slideInLeft 0.8s ease forwards;
+        }
+
+        .timeline-item:nth-child(even) {
+            transform: translateX(50px);
+        }
+
+        .timeline-item:nth-child(even).visible {
+            animation: slideInRight 0.8s ease forwards;
+        }
+
+        @keyframes slideInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .timeline-content {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            position: relative;
+        }
+
+        .timeline-number {
+            font-size: 5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0.2;
+            position: absolute;
+            top: -2rem;
+            left: 1rem;
+        }
+
+        .timeline-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-description {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .timeline-metrics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .metric-badge {
+            background: rgba(102, 126, 234, 0.2);
+            border: 1px solid var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--primary);
+        }
+
+        /* ===== FEATURES ===== */
+        .features {
+            background: var(--bg-dark-secondary);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .feature-card.visible {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+            border-color: var(--primary);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .feature-description {
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        /* ===== TECH STACK ===== */
+        .tech-stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .tech-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        .tech-card.visible {
+            animation: scaleIn 0.5s ease forwards;
+        }
+
+        @keyframes scaleIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .tech-card:hover {
+            transform: scale(1.05);
+            border-color: var(--primary);
+        }
+
+        .tech-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-category {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cta-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-description {
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--bg-dark-secondary);
+            padding: 3rem 5%;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .footer-tagline {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .footer-link {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .footer-link:hover {
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .footer-copyright {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            section {
+                padding: var(--spacing-lg) 5%;
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .timeline-number {
+                font-size: 3rem;
+            }
+
+            .hero-cta, .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            nav {
+                padding: 1rem 5%;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* ===== HIDDEN CLASS ===== */
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+    <div class="particles" id="particles"></div>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo" id="nav-logo">ERPNext Automation Expert</div>
+            <a href="#" class="lang-toggle" id="lang-toggle" onclick="toggleLanguage(); return false;">ع</a>
+        </div>
+    </nav>
+
+    <!-- ENGLISH CONTENT -->
+    <div id="content-en">
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-badge">Transforming Business Operations Through Intelligent Automation</div>
+                    <h1>From 5 Days to 8 Hours</h1>
+                    <p class="hero-subtitle">Real Results from Intelligent ERPNext Implementation</p>
+                    <p class="hero-description">Reducing month-end closing time by 84% through custom automation workflows</p>
+                    <div class="hero-cta">
+                        <a href="https://moh222salah.github.io/cv" target="_blank" class="btn btn-primary">View Portfolio</a>
+                        <a href="https://wa.me/201113903070" target="_blank" class="btn btn-secondary">Contact on WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">💰</div>
+                        <div class="stat-value">60-80%</div>
+                        <div class="stat-label">Cost Reduction</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-value">98%</div>
+                        <div class="stat-label">Accuracy Rate</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⚡</div>
+                        <div class="stat-value">8 Hours</div>
+                        <div class="stat-label">Month-End Closing</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📈</div>
+                        <div class="stat-value">10x</div>
+                        <div class="stat-label">Scalability</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">The Transformation Journey</h2>
+                    <p class="section-subtitle">Four Strategic Phases to Operational Excellence</p>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-number">01</div>
+                            <div class="timeline-icon">🔍</div>
+                            <h3 class="timeline-title">Challenge Analysis</h3>
+                            <p class="timeline-description">Identified critical pain points: 5-day closing cycles, 15% error rates, and manual bottlenecks draining resources.</p>
+                            <div class="timeline-metrics">
+                                <span class="metric-badge">5 Days Closing Time</span>
+                                <span class="metric-badge">15% Error Rate</span>
+                                <span class="metric-badge">High Manual Overhead</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-number">02</div>
+                            <div class="timeline-icon">⚙️</div>
+                            <h3 class="timeline-title">Automation Architecture</h3>
+                            <p class="timeline-description">Designed custom ERPNext workflows with real-time data processing, eliminating batch operations and human errors.</p>
+                            <div class="timeline-metrics">
+                                <span class="metric-badge">Custom Workflows</span>
+                                <span class="metric-badge">Real-time Processing</span>
+                                <span class="metric-badge">Zero Manual Entry</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-number">03</div>
+                            <div class="timeline-icon">🚀</div>
+                            <h3 class="timeline-title">Implementation</h3>
+                            <p class="timeline-description">Deployed scalable system with intelligent automation, seamless integrations, and enterprise-grade performance.</p>
+                            <div class="timeline-metrics">
+                                <span class="metric-badge">Full Integration</span>
+                                <span class="metric-badge">Staff Training</span>
+                                <span class="metric-badge">Performance Optimization</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-number">04</div>
+                            <div class="timeline-icon">✨</div>
+                            <h3 class="timeline-title">Results Achieved</h3>
+                            <p class="timeline-description">Delivered 84% time reduction, 98% accuracy, and 10x scalability without additional headcount.</p>
+                            <div class="timeline-metrics">
+                                <span class="metric-badge">8 Hour Closing</span>
+                                <span class="metric-badge"><2% Error Rate</span>
+                                <span class="metric-badge">10x Growth Ready</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Key Features</h2>
+                    <p class="section-subtitle">Enterprise-grade capabilities that drive results</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🤖</div>
+                        <h3 class="feature-title">Intelligent Automation</h3>
+                        <p class="feature-description">Custom workflows that transform manual processes into self-operating systems</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3 class="feature-title">Real-Time Processing</h3>
+                        <p class="feature-description">From hours to seconds - instant data processing and decision making</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3 class="feature-title">Error Prevention</h3>
+                        <p class="feature-description">Reduced human errors from 15% to less than 2% through automation</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📈</div>
+                        <h3 class="feature-title">Scalable Growth</h3>
+                        <p class="feature-description">Handle 10x business growth without proportional cost increase</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💰</div>
+                        <h3 class="feature-title">Cost Optimization</h3>
+                        <p class="feature-description">60-80% reduction in operational time and resource allocation</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3 class="feature-title">Enterprise Security</h3>
+                        <p class="feature-description">Bank-level security with role-based access and audit trails</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tech-stack-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Technology Excellence</h2>
+                    <p class="section-subtitle">Enterprise-grade tools for world-class results</p>
+                </div>
+                <div class="tech-stack-grid">
+                    <div class="tech-card">
+                        <div class="tech-icon">🏢</div>
+                        <div class="tech-name">ERPNext</div>
+                        <div class="tech-category">ERP Platform</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">🐍</div>
+                        <div class="tech-name">Python</div>
+                        <div class="tech-category">Backend Development</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">⚙️</div>
+                        <div class="tech-name">Frappe Framework</div>
+                        <div class="tech-category">Framework</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">🔄</div>
+                        <div class="tech-name">n8n</div>
+                        <div class="tech-category">Workflow Automation</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">💾</div>
+                        <div class="tech-name">PostgreSQL/MariaDB</div>
+                        <div class="tech-category">Database</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">🐋</div>
+                        <div class="tech-name">Docker</div>
+                        <div class="tech-category">DevOps</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">🔌</div>
+                        <div class="tech-name">REST APIs</div>
+                        <div class="tech-category">Integration</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">📦</div>
+                        <div class="tech-name">Git</div>
+                        <div class="tech-category">Version Control</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 class="cta-title">Ready to Transform Your Business?</h2>
+                    <p class="cta-subtitle">Let's discuss how automation can revolutionize your operations</p>
+                    <p class="cta-description">With proven expertise in ERPNext implementation and custom automation across Egypt, Saudi Arabia, and the Gulf region, I deliver measurable results that transform business operations.</p>
+                    <div class="cta-buttons">
+                        <a href="https://moh222salah.github.io/cv" target="_blank" class="btn btn-primary">Explore Portfolio</a>
+                        <a href="https://wa.me/201113903070" target="_blank" class="btn btn-secondary">Connect on WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <p class="footer-tagline">Building Tomorrow's Business Systems Today</p>
+                <div class="footer-links">
+                    <a href="https://moh222salah.github.io/cv" target="_blank" class="footer-link">Portfolio</a>
+                    <a href="https://github.com/moh222salah" target="_blank" class="footer-link">GitHub</a>
+                    <a href="https://wa.me/201113903070" target="_blank" class="footer-link">WhatsApp</a>
+                </div>
+                <p class="footer-copyright">© 2026 ERPNext Automation Expert. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ARABIC CONTENT -->
+    <div id="content-ar" class="hidden" dir="rtl">
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-badge">تحويل العمليات التجارية من خلال الأتمتة الذكية</div>
+                    <h1>من 5 أيام إلى 8 ساعات</h1>
+                    <p class="hero-subtitle">نتائج حقيقية من تطبيق ERPNext الذكي</p>
+                    <p class="hero-description">تقليل وقت الإغلاق الشهري بنسبة 84% من خلال سير عمل مخصص</p>
+                    <div class="hero-cta">
+                        <a href="https://moh222salah.github.io/cv" target="_blank" class="btn btn-primary">عرض الأعمال</a>
+                        <a href="https://wa.me/201113903070" target="_blank" class="btn btn-secondary">تواصل عبر واتساب</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">💰</div>
+                        <div class="stat-value">60-80%</div>
+                        <div class="stat-label">خفض التكاليف</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-value">98%</div>
+                        <div class="stat-label">نسبة الدقة</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⚡</div>
+                        <div class="stat-value">8 ساعات</div>
+                        <div class="stat-label">الإغلاق الشهري</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📈</div>
+                        <div class="stat-value">10 أضعاف</div>
+                        <div class="stat-label">قابلية التوسع</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">رحلة التحول الرقمي</h2>
+                    <p class="section-subtitle">أربع مراحل استراتيجية نحو التميز التشغيلي</p>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-number">٠١</div>
+                            <div class="timeline-icon">🔍</div>
+                            <h3 class="timeline-title">تحليل التحديات</h3>
+                            <p class="timeline-description">تحديد نقاط الضعف الحرجة: دورات إغلاق 5 أيام، معدل خطأ 15%، واختناقات يدوية تستنزف الموارد.</p>
+                            <div class="timeline-metrics">
+                                <span class="metric-badge">5 أيام وقت الإغلاق</span>
+                                <span class="metric-badge">15% معدل الخطأ</span>
+                                <span class="metric-badge">عبء يدوي مرتفع</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-number">٠٢</div>
+                            <div class="timeline-icon">⚙️</div>
+                            <h3 class="timeline-title">معمارية الأتمتة</h3>
+                            <p class="timeline-description">تصميم سير عمل ERPNext مخصص مع معالجة البيانات الفورية، والقضاء على العمليات اليدوية والأخطاء البشرية.</p>
+                            <div class="timeline-metrics">
+                                <span class="metric-badge">سير عمل مخصص</span>
+                                <span class="metric-badge">معالجة فورية</span>
+                                <span class="metric-badge">صفر إدخال يدوي</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-number">٠٣</div>
+                            <div class="timeline-icon">🚀</div>
+                            <h3 class="timeline-title">التنفيذ</h3>
+                            <p class="timeline-description">نشر نظام قابل للتوسع مع أتمتة ذكية، تكاملات سلسة، وأداء على مستوى المؤسسات.</p>
+                            <div class="timeline-metrics">
+                                <span class="metric-badge">تكامل كامل</span>
+                                <span class="metric-badge">تدريب الموظفين</span>
+                                <span class="metric-badge">تحسين الأداء</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-number">٠٤</div>
+                            <div class="timeline-icon">✨</div>
+                            <h3 class="timeline-title">النتائج المحققة</h3>
+                            <p class="timeline-description">تحقيق خفض 84% في الوقت، دقة 98%، وقابلية توسع 10 أضعاف بدون زيادة في العمالة.</p>
+                            <div class="timeline-metrics">
+                                <span class="metric-badge">8 ساعات إغلاق</span>
+                                <span class="metric-badge"><2% معدل الخطأ</span>
+                                <span class="metric-badge">جاهز للنمو 10 أضعاف</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">المميزات الرئيسية</h2>
+                    <p class="section-subtitle">قدرات على مستوى المؤسسات تحقق النتائج</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🤖</div>
+                        <h3 class="feature-title">الأتمتة الذكية</h3>
+                        <p class="feature-description">سير عمل مخصص يحول العمليات اليدوية إلى أنظمة ذاتية التشغيل</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3 class="feature-title">المعالجة الفورية</h3>
+                        <p class="feature-description">من ساعات إلى ثوانٍ - معالجة فورية للبيانات واتخاذ القرارات</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3 class="feature-title">منع الأخطاء</h3>
+                        <p class="feature-description">تقليل الأخطاء البشرية من 15% إلى أقل من 2% من خلال الأتمتة</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📈</div>
+                        <h3 class="feature-title">النمو القابل للتوسع</h3>
+                        <p class="feature-description">التعامل مع 10 أضعاف النمو التجاري بدون زيادة متناسبة في التكلفة</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💰</div>
+                        <h3 class="feature-title">تحسين التكاليف</h3>
+                        <p class="feature-description">خفض 60-80% في الوقت التشغيلي وتخصيص الموارد</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3 class="feature-title">الأمان على مستوى المؤسسات</h3>
+                        <p class="feature-description">أمان بمستوى البنوك مع صلاحيات متدرجة وسجلات مراجعة</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tech-stack-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">التميز التقني</h2>
+                    <p class="section-subtitle">أدوات على مستوى المؤسسات لنتائج عالمية</p>
+                </div>
+                <div class="tech-stack-grid">
+                    <div class="tech-card">
+                        <div class="tech-icon">🏢</div>
+                        <div class="tech-name">ERPNext</div>
+                        <div class="tech-category">منصة ERP</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">🐍</div>
+                        <div class="tech-name">Python</div>
+                        <div class="tech-category">تطوير الخادم</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">⚙️</div>
+                        <div class="tech-name">Frappe Framework</div>
+                        <div class="tech-category">إطار العمل</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">🔄</div>
+                        <div class="tech-name">n8n</div>
+                        <div class="tech-category">أتمتة سير العمل</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">💾</div>
+                        <div class="tech-name">PostgreSQL/MariaDB</div>
+                        <div class="tech-category">قاعدة البيانات</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">🐋</div>
+                        <div class="tech-name">Docker</div>
+                        <div class="tech-category">DevOps</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">🔌</div>
+                        <div class="tech-name">REST APIs</div>
+                        <div class="tech-category">التكامل</div>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">📦</div>
+                        <div class="tech-name">Git</div>
+                        <div class="tech-category">إدارة الإصدارات</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 class="cta-title">هل أنت مستعد لتحويل عملك؟</h2>
+                    <p class="cta-subtitle">دعنا نناقش كيف يمكن للأتمتة أن تُحدث ثورة في عملياتك</p>
+                    <p class="cta-description">مع خبرة مثبتة في تنفيذ ERPNext والأتمتة المخصصة عبر مصر والسعودية ودول الخليج، أقدم نتائج قابلة للقياس تحول العمليات التجارية.</p>
+                    <div class="cta-buttons">
+                        <a href="https://moh222salah.github.io/cv" target="_blank" class="btn btn-primary">استكشف الأعمال</a>
+                        <a href="https://wa.me/201113903070" target="_blank" class="btn btn-secondary">تواصل عبر واتساب</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <p class="footer-tagline">نبني أنظمة أعمال الغد اليوم</p>
+                <div class="footer-links">
+                    <a href="https://moh222salah.github.io/cv" target="_blank" class="footer-link">الأعمال</a>
+                    <a href="https://github.com/moh222salah" target="_blank" class="footer-link">GitHub</a>
+                    <a href="https://wa.me/201113903070" target="_blank" class="footer-link">واتساب</a>
+                </div>
+                <p class="footer-copyright">© 2026 خبير أتمتة ERPNext. جميع الحقوق محفوظة.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Particles Animation
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Intersection Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Language Toggle
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            const enContent = document.getElementById('content-en');
+            const arContent = document.getElementById('content-ar');
+            const langToggle = document.getElementById('lang-toggle');
+            const htmlEl = document.documentElement;
+            const navLogo = document.getElementById('nav-logo');
+
+            if (currentLang === 'en') {
+                enContent.classList.add('hidden');
+                arContent.classList.remove('hidden');
+                langToggle.textContent = 'EN';
+                htmlEl.setAttribute('lang', 'ar');
+                htmlEl.setAttribute('dir', 'rtl');
+                navLogo.textContent = 'خبير أتمتة ERPNext';
+                currentLang = 'ar';
+            } else {
+                arContent.classList.add('hidden');
+                enContent.classList.remove('hidden');
+                langToggle.textContent = 'ع';
+                htmlEl.setAttribute('lang', 'en');
+                htmlEl.setAttribute('dir', 'ltr');
+                navLogo.textContent = 'ERPNext Automation Expert';
+                currentLang = 'en';
+            }
+
+            // Reobserve elements after language change
+            observeElements();
+        }
+
+        // Observe elements
+        function observeElements() {
+            const activeContent = currentLang === 'en' ? 
+                document.getElementById('content-en') : 
+                document.getElementById('content-ar');
+
+            activeContent.querySelectorAll('.stat-card').forEach(card => observer.observe(card));
+            activeContent.querySelectorAll('.timeline-item').forEach(item => observer.observe(item));
+            activeContent.querySelectorAll('.feature-card').forEach(card => observer.observe(card));
+            activeContent.querySelectorAll('.tech-card').forEach(card => observer.observe(card));
+        }
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            observeElements();
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
